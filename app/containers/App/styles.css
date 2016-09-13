@@ -4,6 +4,24 @@
  * App container styles
  */
 
+html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(45deg, #7f868c, #7f868c);
+    min-height: 100%;
+    background-repeat: no-repeat;
+    max-width: 650px;
+    margin-left: 10px;
+}
+
 .container {
   display: block;
+}
+
+.text {
+    color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 0.8em;
 }

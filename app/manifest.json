@@ -1,5 +1,5 @@
 {
-  "name": "React Boilerplate",
+  "name": "React Playground",
   "icons": [
     {
       "src": "favicon.png",
@@ -28,6 +28,5 @@
   ],
   "start_url": "index.html",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#FFFFFF"
+  "orientation": "portrait"
 }

@@ -12,6 +12,7 @@
  */
 
 import React from 'react';
+import Helmet from 'react-helmet';
 
 import styles from './styles.css';
 
@@ -24,6 +25,14 @@ export default class App extends React.Component { // eslint-disable-line react/
   render() {
     return (
       <div className={styles.container}>
+        <Helmet
+          titleTemplate="React Playground"
+          defaultTitle="React Playground"
+          meta={[
+            { name: 'description', content: 'React Playground Application'},
+          ]}
+        />
+
         {React.Children.toArray(this.props.children)}
       </div>
     );

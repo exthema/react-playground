@@ -11,25 +11,32 @@
 
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import MyComponent from 'components/MyComponent';
+
+import ScreenView from 'components/ScreenView';
+import Button from 'components/Button';
 import messages from './messages';
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
 
-    let o = doStuff();
+    function testClicked() {
+        alert("Click!");
+    }
 
     return (
       <div> 
-        <FormattedMessage {...messages.header} />
-        <MyComponent prop1={o}/>
-        <MyComponent prop1={doStuff()}/>
+        <ScreenView texts={doStuff()}/>
+        <Button onClick={testClicked}>
+          text
+        </Button>
       </div>
     );
   }
 }
 
+
+
 function doStuff() {
-  return {a: "data", b: "comp"};
+  return {header: "Header Text", mininfo: "Info", intval: 0};
 }
