@@ -1,47 +1,64 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Button from 'components/Button';
 
 import styles from './styles.css';
 
-function ScreenView(props) {
+class ScreenView extends Component {
 
-    function testClick() {
-        alert("Clicky!");
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            ...props
+        }
+
+        //this.state.a=0;
     }
 
-    return (
-        
-        <div className={styles.divider}>
-            <div className={styles.dividerdate}>{props.texts.mininfo}</div>
-            <div className={styles.dividertext}>{props.texts.header}</div>
+    buttonClickPlus() {
+        this.state.a = ++this.state.a;
+        this.setState(this.state);
+    } 
 
-            <div className={styles.dividertldr}>
-                <div className={styles.tldrtextp}>
-                    Text to show here ...
-                    <Button onClick={testClick} >TestButton</Button>
-                    <Button onClick={testClick} >TestButton</Button>
+    buttonClickMinus() {
+        this.state.a = --this.state.a;
+        this.setState(this.state);
+    } 
+
+    render() {
+        return (
+        
+            <div className={styles.divider}>
+                <div className={styles.dividerdate}>asd</div>
+                <div className={styles.dividertext}>asds</div>
+
+                <div className={styles.dividertldr}>
+                    <div className={styles.tldrtextp}>
+                        Text to show here ... {this.state.a}
+                        <Button onClick={ ::this.buttonClickPlus}>Plus</Button>
+                        <Button onClick={ ::this.buttonClickMinus}>Minus</Button>
+                    </div> 
                 </div>
-            </div>
-            <div className={styles.dividercontainer}>
-                <div className={styles.dividercontainertextp}>
-                    Lorem ipsum asdfert e roer gokkoegr okrg eorkog eokrgo eork gokerokgk oerok goke okoks ok ekg.
+                <div className={styles.dividercontainer}>
+                    <div className={styles.dividercontainertextp}>
+                        Lorem ipsum asdfert e roer gokkoegr okrg eorkog eokrgo eork gokerokgk oerok goke okoks ok ekg.
+                    </div>
+                    <div className={styles.dividercontainertextp}>
+                        Lorem  asdfa sdf asdf asdf asdf asdf asdf asdf asdfa sdf asdf asdf asdff dsf sdsf dfdsdf s ipsum asdfert e roer gokkoegr okrg eorkog eokrgo eork gokerokgk oerok goke okoks ok ekg.
+                    </div>   
+                    <div className={styles.dividercontainertextp}>
+                        Lorem ipsum asdfert e roer gokkoegr okrg eorkog eokrgo eork gokerokgk oerok goke okoks ok ekg.
+                    </div>         
                 </div>
-                <div className={styles.dividercontainertextp}>
-                    Lorem  asdfa sdf asdf asdf asdf asdf asdf asdf asdfa sdf asdf asdf asdff dsf sdsf dfdsdf s ipsum asdfert e roer gokkoegr okrg eorkog eokrgo eork gokerokgk oerok goke okoks ok ekg.
-                </div>   
-                <div className={styles.dividercontainertextp}>
-                    Lorem ipsum asdfert e roer gokkoegr okrg eorkog eokrgo eork gokerokgk oerok goke okoks ok ekg.
-                </div>         
+                <div className={styles.dividerlineend}></div>
             </div>
-            <div className={styles.dividerlineend}></div>
-        </div>
-    );
+        );
+    }
 }
 
 ScreenView.propTypes = {
-  texts: React.PropTypes.object,
-  intval: React.PropTypes.string
+  a: React.PropTypes.string
 };
 
 export default ScreenView;

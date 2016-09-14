@@ -17,26 +17,12 @@ import Button from 'components/Button';
 import messages from './messages';
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
-
   render() {
-
-    function testClicked() {
-        alert("Click!");
-    }
-
     return (
       <div> 
-        <ScreenView texts={doStuff()}/>
-        <Button onClick={testClicked}>
-          text
-        </Button>
+        <ScreenView a="100"/>
+        <ScreenView a="200"/>
       </div>
     );
   }
-}
-
-
-
-function doStuff() {
-  return {header: "Header Text", mininfo: "Info", intval: 0};
 }
